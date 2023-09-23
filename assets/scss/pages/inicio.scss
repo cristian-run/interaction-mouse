@@ -1,0 +1,57 @@
+body{
+    background: rgb(0, 213, 255);
+}
+
+.landscape{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .sun{
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: #e9bc40;
+        position: relative;
+        overflow: hidden;
+        margin: 2vw auto 0;
+        &:after{
+            content: "";
+            position: absolute;
+            top: -10%;
+            left: 10%;
+            width: 100%;
+            height: 100%;
+            background: rgb(255 255 255 / 50%);
+            border-radius: 50%;
+            mix-blend-mode: soft-light;
+        }
+    }
+    .molino{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+        @keyframes spin {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        &:after{
+            content: "";
+            display: block;
+            height: 150px;
+            width: 4px;
+            background: #ad8b00;
+        }
+        .spin{
+            height: 120px;
+            margin-bottom: -50px;
+            animation:spin  2s linear infinite;
+        }
+    }
+   
+}
+

@@ -1,0 +1,8 @@
+@import 'reset';
+
+section{
+    @media(min-width:768px){
+        min-height: 100vh;
+        min-width: 100vw;
+    }
+}
