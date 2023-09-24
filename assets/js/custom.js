@@ -3,7 +3,7 @@ var initialRotation = 0;
 
 var today = new Date();
 var currentTime = today.getHours();
-if ((currentTime) => 15) {
+if ((currentTime) => 18) {
   document.body.classList.add("night");
 }
 
