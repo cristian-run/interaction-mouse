@@ -1,5 +1,8 @@
 body{
     background: rgb(0, 213, 255);
+    &.night{
+        background: #0f0825;
+    }
 }
 
 .landscape{
@@ -25,6 +28,7 @@ body{
             border-radius: 50%;
             mix-blend-mode: soft-light;
         }
+        
     }
     .molino{
         display: flex;
@@ -34,7 +38,7 @@ body{
         @keyframes spin {
             from{
                 transform: rotate(0deg);
-            }
+            } 
             to{
                 transform: rotate(360deg);
             }
@@ -49,7 +53,7 @@ body{
         .spin{
             height: 120px;
             margin-bottom: -50px;
-            animation:spin  2s linear infinite;
+            animation:spin  3s linear infinite;
         }
     }
    

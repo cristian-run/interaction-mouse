@@ -1,27 +1,33 @@
 var initialMouseX = null;
 var initialRotation = 0;
 
-$(document).bind('mousemove', function (e) {
-    if (initialMouseX === null) {
-        initialMouseX = e.pageX;
-        initialRotation = getRotationValue($('.spin img'));
-    }
+var today = new Date();
+var currentTime = today.getHours();
+if ((currentTime) => 15) {
+  document.body.classList.add("night");
+}
 
-    var mouseX = e.pageX;
-    var rotationDelta = (mouseX - initialMouseX) * 0.5; // Ajusta el factor para controlar la velocidad de rotación
+$(document).bind("mousemove", function (e) {
+  if (initialMouseX === null) {
+    initialMouseX = e.pageX;
+    initialRotation = getRotationValue($(".spin img"));
+  }
 
-    var newRotation = initialRotation + Math.abs(rotationDelta);
+  var mouseX = e.pageX;
+  var rotationDelta = (mouseX - initialMouseX) * 0.5; // Ajusta el factor para controlar la velocidad de rotación
 
-    $("#log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY);
-    $('.spin img').css('transform', 'rotate(' + (newRotation / 2) + 'deg)');
+  var newRotation = initialRotation + Math.abs(rotationDelta);
 
-    console.log(newRotation)
+  $("#log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY);
+  $(".spin img").css("transform", "rotate(" + newRotation / 2 + "deg)");
+
+  // console.log(newRotation)
 });
 
 function getRotationValue(element) {
-    var matrix = element.css('transform').split('(')[1].split(')')[0].split(',');
-    var a = matrix[0];
-    var b = matrix[1];
-    var angle = Math.atan2(b, a);
-    return angle * (180 / Math.PI);
+  var matrix = element.css("transform").split("(")[1].split(")")[0].split(",");
+  var a = matrix[0];
+  var b = matrix[1];
+  var angle = Math.atan2(b, a);
+  return angle * (180 / Math.PI);
 }
