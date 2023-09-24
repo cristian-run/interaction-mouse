@@ -8,7 +8,7 @@ if ((currentTime) => 18) {
 }
 
 // cambio para evitar y hacer reset soft
-console.log('cambio innecesario')
+console.log('cambio innecesario y ahora un cambio para realizar reset mixed')
 
 $(document).bind("mousemove", function (e) {
   if (initialMouseX === null) {
