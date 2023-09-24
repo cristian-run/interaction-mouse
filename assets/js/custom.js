@@ -7,6 +7,9 @@ if ((currentTime) => 18) {
   document.body.classList.add("night");
 }
 
+// cambio para evitar y hacer reset soft
+console.log('cambio innecesario')
+
 $(document).bind("mousemove", function (e) {
   if (initialMouseX === null) {
     initialMouseX = e.pageX;
