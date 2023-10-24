@@ -8,7 +8,7 @@ if ((currentTime) => 18) {
 }
 
 // cambio para evitar y hacer reset soft
-console.log('cambio innecesario y ahora un cambio para realizar reset mixed, tambien un cambio posterior al mixed para punto de partida');
+console.log('Cambios de la rama pendiente');
 
 $(document).bind("mousemove", function (e) {
   if (initialMouseX === null) {
